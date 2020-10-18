@@ -1,31 +1,50 @@
 ﻿# Description
 
-Insert a useful description for the GetPSHelpParameters project here.
+Get-PSHelpParameters
 
-Remember, it's the first thing a visitor will see.
+This helper function will quickly return parameters for and cmdlet or function
 
-# Project Setup Instructions
-## Working with the layout
+[1 ms] C:\> Get-HelpParameter -Name Get-Help
+[12:21:28][Get-HelpParameter] [0]: Category
+[12:21:28][Get-HelpParameter] [1]: Component
+[12:21:28][Get-HelpParameter] [2]: Detailed
+[12:21:28][Get-HelpParameter] [3]: Examples
+[12:21:28][Get-HelpParameter] [4]: Full
+[12:21:28][Get-HelpParameter] [5]: Functionality
+[12:21:28][Get-HelpParameter] [6]: Name
+[12:21:28][Get-HelpParameter] [7]: Online
+[12:21:28][Get-HelpParameter] [8]: Parameter
+[12:21:28][Get-HelpParameter] [9]: Path
+[12:21:28][Get-HelpParameter] [10]: Role
+[12:21:28][Get-HelpParameter] [11]: ShowWindow
 
-- Don't touch the psm1 file
-- Place functions you export in `functions/` (can have subfolders)
-- Place private/internal functions invisible to the user in `internal/functions` (can have subfolders)
-- Don't add code directly to the `postimport.ps1` or `preimport.ps1`.
-  Those files are designed to import other files only.
-- When adding files & folders, make sure they are covered by either `postimport.ps1` or `preimport.ps1`.
-  This adds them to both the import and the build sequence.
+Which parameter do you want help info for?: 0
 
-## Setting up CI/CD
+-Category <System.String[]>
+    Displays help only for items in the specified category and their aliases. Conceptual articles are in the HelpFile
+    category.
 
-> To create a PR validation pipeline, set up tasks like this:
+    The acceptable values for this parameter are as follows:
+    - Alias
+    - Cmdlet
+    - Provider
+    - General
+    - FAQ
+    - Glossary
+    - HelpFile
+    - ScriptCommand
+    - Function
+    - Filter
+    - ExternalScript
+    - All
+    - DefaultHelp
+    - Workflow
+    - DscResource
+    - Class
+    - Configuration
 
-- Install Prerequisites (PowerShell Task; VSTS-Prerequisites.ps1)
-- Validate (PowerShell Task; VSTS-Validate.ps1)
-- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)
-
-> To create a build/publish pipeline, set up tasks like this:
-
-- Install Prerequisites (PowerShell Task; VSTS-Prerequisites.ps1)
-- Validate (PowerShell Task; VSTS-Validate.ps1)
-- Build (PowerShell Task; VSTS-Build.ps1)
-- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)
+    Required?                    false
+    Position?                    named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
