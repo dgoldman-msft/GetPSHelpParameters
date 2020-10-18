@@ -4,7 +4,7 @@ Get-PSHelpParameters
 
 This helper function will quickly return parameters for and cmdlet or function
 
-[1 ms] C:\> Get-HelpParameter -Name Get-Help
+[1 ms] C:\> Get-HelpParameter -Name Get-Help  
 [12:21:28][Get-HelpParameter] [0]: Category  
 [12:21:28][Get-HelpParameter] [1]: Component  
 [12:21:28][Get-HelpParameter] [2]: Detailed  
