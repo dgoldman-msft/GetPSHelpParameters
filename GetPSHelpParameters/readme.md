@@ -1,17 +1,50 @@
-﻿# PSFModule guidance
+﻿# Description
 
-This is a finished module layout optimized for implementing the PSFramework.
+Get-PSHelpParameters
 
-If you don't care to deal with the details, this is what you need to do to get started seeing results:
+This helper function will quickly return parameters for and cmdlet or function
 
- - Add the functions you want to publish to `/functions/`
- - Update the `FunctionsToExport` node in the module manifest (GetPSHelpParameters.psd1). All functions you want to publish should be in a list.
- - Add internal helper functions the user should not see to `/internal/functions/`
- 
- ## Path Warning
- 
- > If you want your module to be compatible with Linux and MacOS, keep in mind that those OS are case sensitive for paths and files.
- 
- `Import-ModuleFile` is preconfigured to resolve the path of the files specified, so it will reliably convert weird path notations the system can't handle.
- Content imported through that command thus need not mind the path separator.
- If you want to make sure your code too will survive OS-specific path notations, get used to using `Resolve-path` or the more powerful `Resolve-PSFPath`.
+[1 ms] C:\> Get-HelpParameter -Name Get-Help
+[12:21:28][Get-HelpParameter] [0]: Category
+[12:21:28][Get-HelpParameter] [1]: Component
+[12:21:28][Get-HelpParameter] [2]: Detailed
+[12:21:28][Get-HelpParameter] [3]: Examples
+[12:21:28][Get-HelpParameter] [4]: Full
+[12:21:28][Get-HelpParameter] [5]: Functionality
+[12:21:28][Get-HelpParameter] [6]: Name
+[12:21:28][Get-HelpParameter] [7]: Online
+[12:21:28][Get-HelpParameter] [8]: Parameter
+[12:21:28][Get-HelpParameter] [9]: Path
+[12:21:28][Get-HelpParameter] [10]: Role
+[12:21:28][Get-HelpParameter] [11]: ShowWindow
+
+Which parameter do you want help info for?: 0
+
+-Category <System.String[]>
+    Displays help only for items in the specified category and their aliases. Conceptual articles are in the HelpFile
+    category.
+
+    The acceptable values for this parameter are as follows:
+    - Alias
+    - Cmdlet
+    - Provider
+    - General
+    - FAQ
+    - Glossary
+    - HelpFile
+    - ScriptCommand
+    - Function
+    - Filter
+    - ExternalScript
+    - All
+    - DefaultHelp
+    - Workflow
+    - DscResource
+    - Class
+    - Configuration
+
+    Required?                    false
+    Position?                    named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
